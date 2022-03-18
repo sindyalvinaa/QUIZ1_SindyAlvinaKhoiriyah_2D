@@ -93,31 +93,31 @@ Art Factory
 <!-- ***** Features Big Item End ***** -->
 
 <section>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Judul Gambar</th>
-        <th scope="col">Gambar</th>
-        <th scope="col">Deskripsi</th>
-        <th scope="col">Harga</th>
-        <th scope="col">Stok</th>
-      </tr>
-    </thead>
-    {{-- @foreach($postdata as $data) --}}
-    <tbody>
-        <tr>
-          <td scope="row">{{id}}</td>
-          <td>{{judul_gambar}}</td>
-          <td>{{gambar}}</td>
-          <td>{{deskripsi}}</td>
-          <td>{{harga}}</td>
-          <td>{{stok}}</td>
-        </tr>
-      </tbody>
-    {{-- @endforeach --}}
-  </table>
-</section>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Judul Gambar</th>
+            <th scope="col">Gambar</th>
+            <th scope="col">Deskripsi</th>
+            <th scope="col">Harga</th>
+            <th scope="col">Stok</th>
+          </tr>
+        </thead>
+    @foreach($postdata as $data)
+        <tbody>
+            <tr>
+              <td scope="row">{{$data->id}}</td>
+              <td>{{$data->judul_gambar}}</td>
+              <td><img src="/images/{{$data->gambar}}" alt="gambar"width="100px"></td>
+              <td>{{$data->deskripsi}}</td>
+              <td>{{$data->harga}}</td>
+              <td>{{$data->stok}}</td>
+            </tr>
+          </tbody>
+        @endforeach
+      </table>
+    </section>
 
 
 <!-- ***** Features Big Item Start ***** -->

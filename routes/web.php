@@ -14,6 +14,4 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', [PostController::class, 'post'])->name('post');

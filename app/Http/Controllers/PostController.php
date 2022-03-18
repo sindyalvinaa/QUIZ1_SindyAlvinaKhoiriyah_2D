@@ -10,8 +10,8 @@ class PostController extends Controller
 {
     //
     public function post(){
-        $data = Post::find(1);
-        return view ('post')
-        ->with('Post',$data);
-}
+        $data = Post::all();
+        return view('index')
+        -> with('postdata',$data);
+    }
 }
