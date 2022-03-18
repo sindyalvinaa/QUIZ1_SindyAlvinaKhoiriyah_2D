@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\post;
+use App\Models\Post;
 
 
 class PostController extends Controller
 {
     //
     public function post(){
-        $data = Post::all();
-        return view ('post', ['post'=>$data]);
+        $data = Post::find(1);
+        return view ('post')
+        ->with('Post',$data);
 }
 }
